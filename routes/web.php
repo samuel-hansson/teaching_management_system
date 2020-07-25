@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/direct', function () {
+    $example2 = resolve('example2');
+    ddd($example2);
+});
+
 Route::get('/', function () {
 //    return view('welcome');
     /*
@@ -29,3 +35,67 @@ Route::get('/', function () {
 //    ddd($example);
     $example->go();
 });
+
+Route::get('/direct_resolve', function () {
+
+    $example = resolve(\App\DirectResolveClass::class);
+    ddd($example);
+});
+
+Route::get('/dependency', function () {
+
+    $example = resolve(\App\ClassOne::class);
+    ddd($example);
+});
+
+Route::get('/controller_demo', 'ExampleController@index');
+
+Route::get('/welcome', function () {
+//    return view('welcome');
+//    return '你好';
+    return ['hi' => '你好'];
+});
+
+Route::get('/request', function () {
+    $name = request('name');
+    return view('result',[
+        'name' => $name
+    ]);
+});
+
+Route::get('/users/{user}/comments/{comment}', 'UserController@show');
+Route::get('/users_table', 'UserController@show_table');
+Route::get('/show_all_users', 'UserController@show_all_users');
+Route::get('/show_user', 'UserController@show_user');
+
+Route::get('/users', 'UserController@index');
+Route::get('/users/create', 'UserController@create');
+Route::post('/users','UserController@store');
+Route::get('/users/{user}/edit', 'UserController@edit');
+Route::put('/users/{user}','UserController@update');
+Route::get('/users/{user}', 'UserController@display');
+
+
+Route::get('/articles','ArticlesController@index');
+Route::get('/articles/{article}','ArticlesController@show');
+
+/*
+ * GET /articles
+ * GET /articles/20
+ */
+
+/*
+ * GET /articles/create
+ * POST /articles/
+ */
+
+/*
+ * GET /articles/20/edit
+ * PUT /articles/20
+ */
+
+/*
+ * DELETE /articles/20
+ */
+
+
