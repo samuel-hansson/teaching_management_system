@@ -17,7 +17,7 @@ class CreatePersonnelTrainingProgramsTable extends Migration
             $table->increments('id');
             $table->string('code',20)->unique();
             $table->string('grade',4);
-            $table->unsignedInteger('department_id');
+            $table->unsignedInteger('speciality_id');
             $table->timestamps();
         });
     }
