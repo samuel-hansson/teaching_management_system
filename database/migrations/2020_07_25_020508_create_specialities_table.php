@@ -15,10 +15,12 @@ class CreateSpecialitiesTable extends Migration
     {
         Schema::create('specialities', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('spec_id',50)->unique();
+            $table->string('spec_code',50)->unique();
             $table->string('name',100)->unique();
             $table->unsignedInteger('department_id');
             $table->timestamps();
+            $table->foreign('department_id')->references('id')->on('departments')
+                    ->onDelete('cascade');
         });
     }
 
