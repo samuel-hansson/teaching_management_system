@@ -19,6 +19,10 @@ class CreatePersonnelTrainingProgramsTable extends Migration
             $table->string('grade',4);
             $table->unsignedInteger('speciality_id');
             $table->timestamps();
+
+            $table->index(['grade','speciality_id']);
+            $table->foreign('speciality_id')->references('id')->on('specialities')
+                ->onDelete('cascade');
         });
     }
 
