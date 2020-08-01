@@ -15,7 +15,7 @@ class CreateProfessionalTeachingProgressSchemesTable extends Migration
     {
         Schema::create('professional_teaching_progress_schemes', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('semester',1);
+            $table->enum('semester',['1','2','3','4','5','6']);
             $table->unsignedInteger('pts_id');
             $table->timestamps();
 

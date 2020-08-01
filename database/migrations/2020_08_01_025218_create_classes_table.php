@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudentsTable extends Migration
+class CreateClassesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('classes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',20);
-            $table->string('s_code',40)->unique();
-
+            $table->string('name',20)->unique();
+            $table->unsignedInteger('ptp_id');
+            $table->enum('category',['行政班','教学班']);
             $table->timestamps();
+
+            $table->foreign('ptp_id')->references('id')->on('personnel_training_programs')
+                ->onDelete('cascade');
         });
     }
 
@@ -29,6 +32,6 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('classes');
     }
 }
