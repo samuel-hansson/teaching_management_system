@@ -17,12 +17,12 @@ class User extends Model
         return 'name';
     }
 
-    public function accounts(){
-        $this->hasMany(UserExample::class);
-        $this->hasOne(ClassOne::class);
-        $this->belongsTo(Example::class);
-        $this->belongsToMany(ExampleTwo::class);
-        $this->hasManyThrough(DependencyClass::class,,)
-    }
+//    public function accounts(){
+//        $this->hasMany(UserExample::class);
+//        $this->hasOne(ClassOne::class);
+//        $this->belongsTo(Example::class);
+//        $this->belongsToMany(ExampleTwo::class);
+//        $this->hasManyThrough(DependencyClass::class,,)
+//    }
 
 }
