@@ -99,3 +99,7 @@ Route::get('/articles/{article}','ArticlesController@show');
  */
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
