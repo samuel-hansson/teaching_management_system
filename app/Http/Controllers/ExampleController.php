@@ -14,4 +14,8 @@ class ExampleController extends Controller
         ddd(resolve('App\Example'),resolve('App\Example'));
 
     }
+
+    public function testSession(){
+        \request()->session()->put('a','b');
+    }
 }
