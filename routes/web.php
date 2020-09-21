@@ -104,3 +104,6 @@ Route::get('/articles/{article}','ArticlesController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/testJob/{data}','TestJobController@testJob');
+Route::get('/testAnotherQueueJob/{data}','TestAnotherQueueJobController@testAnotherQueueJob');
