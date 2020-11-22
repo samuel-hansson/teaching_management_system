@@ -107,3 +107,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/testJob/{data}','TestJobController@testJob');
 Route::get('/testAnotherQueueJob/{data}','TestAnotherQueueJobController@testAnotherQueueJob');
+
+//Route:get('/seatingCharts/{classroom}',);
