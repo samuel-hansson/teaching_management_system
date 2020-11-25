@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\ComputerRoom;
+use App\Classroom;
 use Illuminate\Http\Request;
 
-class ComputerRoomsController extends Controller
+class ClassroomsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,22 +41,23 @@ class ComputerRoomsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ComputerRoom  $computerRoom
+     * @param  \App\Classroom  $classroom
      * @return \Illuminate\Http\Response
      */
-    public function show(ComputerRoom $computerRoom)
+    public function show(Classroom $classroom)
     {
         //
-
+//        return $classroom->code;
+        return "ok";
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ComputerRoom  $computerRoom
+     * @param  \App\Classroom  $classroom
      * @return \Illuminate\Http\Response
      */
-    public function edit(ComputerRoom $computerRoom)
+    public function edit(Classroom $classroom)
     {
         //
     }
@@ -65,10 +66,10 @@ class ComputerRoomsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ComputerRoom  $computerRoom
+     * @param  \App\Classroom  $classroom
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ComputerRoom $computerRoom)
+    public function update(Request $request, Classroom $classroom)
     {
         //
     }
@@ -76,10 +77,10 @@ class ComputerRoomsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ComputerRoom  $computerRoom
+     * @param  \App\Classroom  $classroom
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ComputerRoom $computerRoom)
+    public function destroy(Classroom $classroom)
     {
         //
     }

@@ -108,4 +108,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/testJob/{data}','TestJobController@testJob');
 Route::get('/testAnotherQueueJob/{data}','TestAnotherQueueJobController@testAnotherQueueJob');
 
-//Route:get('/seatingCharts/{computer_room}','');
+//Route:get('/seatingCharts/{computerRoom}','ComputerRoomsController@show');
+//Route:get('/seatingCharts/{classroom}','ClassroomsController@show');
+Route::get('/seatingCharts/{classroom}', function () {
+    return 'ok';
+});
