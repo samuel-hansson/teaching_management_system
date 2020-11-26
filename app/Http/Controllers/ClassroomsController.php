@@ -47,8 +47,8 @@ class ClassroomsController extends Controller
     public function show(Classroom $classroom)
     {
         //
-//        return $classroom->code;
-        return "ok";
+        return $classroom->code;
+        $specialities = App\Speciality::with('department')->get();
     }
 
     /**
